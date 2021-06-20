@@ -7,7 +7,7 @@ const button = document.getElementById("enviar");
 const botonbuscar = document.getElementById("busqueda");
 const informacion = document.getElementById("informaciongenerada");
 const fragment = document.createDocumentFragment();
-const template = document.querySelector("#template-ciudad").content;
+const template = document.querySelector("#template-musico").content;
 const card = document.querySelector(".card");
 
 //const fondo =document.querySelector(".fondo");
