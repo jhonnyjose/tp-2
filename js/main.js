@@ -63,6 +63,10 @@ function localStore(result) {
     let sitWeb = result.artists[0].strWebsite;
     let facebook = result.artists[0].strFacebook;
     let twitter = result.artists[0].strTwitter;
+    let strArtistFanart = result.artists[0].strArtistFanart;
+    let strArtistFanart2 = result.artists[0].strArtistFanart2;
+    let strArtistFanart3 = result.artists[0].strArtistFanart3;
+    let strArtistBanner = result.artists[0].strArtistBanner;
 
 
 
@@ -78,6 +82,10 @@ function localStore(result) {
         sitioWeb: sitWeb,
         facebook: facebook,
         twitter: twitter,
+        img1: strArtistFanart,
+        img2: strArtistFanart2,
+        img3: strArtistFanart3,
+        img4: strArtistBanner,
 
     }
 
@@ -139,49 +147,62 @@ function mostrardatos(data) {
 
 
     informacion.innerHTML = '';
+
     template.querySelector('.card-title').textContent = data.nombreArtista;
-    template.querySelector('#logo').setAttribute(`src`, `${data.logo}`);
-    template.querySelector('.activator').setAttribute(`src`, `${data.imgGrupo}`);
-    template.querySelector('.card-reveal .card-title ~ p').textContent = data.bio;
-    template.querySelector('.collapsible li:nth-child(1) .collapsible-body ').textContent = data.Genero;
-    template.querySelector('.collapsible li:nth-child(2) .collapsible-body a').textContent=data.sitioWeb;
-    template.querySelector('.collapsible li:nth-child(2) .collapsible-body a').setAttribute(`href`,`https://`+`${data.sitioWeb}`);
 
-    console.log("🚀 ~ file: main.js ~ line 148 ~ mostrardatos ~ data.sitioWeb", data.sitioWeb)
+    if (data.logo != '') {
+        template.querySelector('#logo').setAttribute(`src`, `${data.logo}`);
+    }
+
+    if (data.imgGrupo != '' && data.imgGrupo != null) {
+        template.querySelector('.activator').setAttribute(`src`, `${data.imgGrupo}`);
+    }
+
+    if (data.bio != '' && data.bio != null) {
+        template.querySelector('.card-reveal .card-title ~ p').textContent = data.bio;
+    }
+
+    if (data.Genero != '' && data.Genero != null) {
+        template.querySelector('.collapsible li:nth-child(1) .collapsible-body ').textContent = data.Genero;
+    }
+
+    if (data.sitioWeb != '' && data.sitioWeb != null) {
+        template.querySelector('.collapsible li:nth-child(2) .collapsible-body a').textContent = data.sitioWeb;
+        template.querySelector('.collapsible li:nth-child(2) .collapsible-body a').setAttribute(`href`, `https://` + `${data.sitioWeb}`);
+    }
+
+    if (data.facebook != '' && data.facebook != null) {
+        template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(1) a').textContent = data.facebook;
+        template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(1) a').setAttribute(`href`, `https://` + `${data.facebook}`);
+    }
+
+    if (data.twitter != '' && data.twitter != null) {
+        template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(2) a').textContent = data.twitter;
+        template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(2) a').setAttribute(`href`, `https://` + `${data.twitter}`);
+    }
+    if (data.img1 != '' && data.img1 != null) {
+        template.querySelector('.collapsible li:nth-child(4) .collapsible-body .carousel img:nth-child(1)').setAttribute(`src`, `${data.img1}`);
+    }
+    if (data.img2 != '' && data.img2 != null) {
+        template.querySelector('.collapsible li:nth-child(4) .collapsible-body .carousel img:nth-child(2)').setAttribute(`src`, `${data.img2}`);
+    }
+
+    if (data.img3 != '' && data.img3 != null) {
+        template.querySelector('.collapsible li:nth-child(4) .collapsible-body .carousel img:nth-child(3)').setAttribute(`src`, `${data.img3}`);
+    }
+
+    if (data.img4 != '' && data.img4 != null) {
+        template.querySelector('.collapsible li:nth-child(4) .collapsible-body .carousel img:nth-child(4)').setAttribute(`src`, `${data.img4}`);
+    }
 
 
 
 
- 
-    /* template.querySelector(".card-header").textContent = botonbuscar.value.toUpperCase();
-    template.querySelector(".card-body ul li:nth-child(1)").textContent = `Temperatura Actual: ` + data.temperatura + ` °C`;
-    template.querySelector(".card-body ul li:nth-child(2)").textContent = `Temperatura Máxima: ` + data.temperaturaMax + ` °C`;
-    template.querySelector(".card-body ul li:nth-child(3)").textContent = `Temperatura Mínima: ` + data.temperaturaMin + ` °C`;
-    template.querySelector(".card-body ul li:nth-child(4)").textContent = `Humedad: ` + data.humedad + ` %`;
-    template.querySelector(".card-body ul li:nth-child(5)").textContent = `Sensación térmica : ` + data.sensasionTermica + ` °C`;
-    template.querySelector(".card-body ul li:nth-child(6)").textContent = `Presión atmosférica : ` + data.presionAtmosferica + ` Pa`;
-    template.querySelector(".card-body ul li:nth-child(7)").textContent = `Velocidad del viento : ` + data.velocidadViento + ` m/s`;
-    template.querySelector(".card-body ul li:nth-child(8)").textContent = ` Estado del clima: ` + data.estadoClima;
-
-    let rutaclima = '';
-
-   
-
-    template.querySelector(".card-body img").setAttribute(`src`, `${rutaclima}`);
-    template.querySelector(".card-body img").setAttribute(`class`, `img-fluid`);
 
 
-    let rutaMapa = `${url_mapa}/map/1/staticimage?key=${api_mapa}&zoom=9&center=${data.longitud},${data.latitud}&format=jpg&layer=basic&style=main&width=1305&height=748&view=Unified&language=es-ES`
 
-    let imagenMapa = `<img src="`;
-    imagenMapa += rutaMapa;
-    imagenMapa += `" alt="mapa de la ciudad"`;
-    imagenMapa += ` class = "img-fluid" >`
 
-    template.querySelector(".card-body .mapa").innerHTML = imagenMapa;
-    //  console.log(imagenMapa)
 
-*/
     const clone = template.cloneNode(true);
     fragment.appendChild(clone);
 
@@ -189,5 +210,3 @@ function mostrardatos(data) {
 
 
 }
-
-
