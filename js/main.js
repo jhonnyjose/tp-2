@@ -53,15 +53,33 @@ function localStore(result) {
 
     }
 
-    var bio = result.artists[0].strBiographyES;
-    console.log("🚀 ~ file: main.js ~ line 57 ~ localStore ~ bio", bio)
+    let idArtista = result.artists[0].idArtist;
+    let logo =result.artists[0].strArtistLogo;
+    let bio = result.artists[0].strBiographyES;
+    let imgGrupo = result.artists[0].strArtistThumb;
+    let genMus = result.artists[0].strGenre;
+    let sitWeb = result.artists[0].strWebsite;
+    let facebook = result.artists[0].strFacebook;
+    let twitter = result.artists[0].strTwitter;
+
+
     
     
 
     data = {
+        idArtista : idArtista,
+        logo : logo,
         bio: bio,
+        'imagen del grupo': imgGrupo,
+        'Genero del grupo': genMus,
+        'sitio web': sitWeb,
+        facebook : facebook,
+        twitter : twitter,
      
     }
+
+    videos(idArtista);
+
 
     arrayDatos.push(data);
 
@@ -69,8 +87,45 @@ function localStore(result) {
     recuperar_localStorage = JSON.parse(localStorage.getItem("artistaConsultado"));
 
 
-   // mostrardatos(data);
+   //mostrardatos(data);
 
+}
+
+
+function videos(idArtist){
+    let urlVideo = 'https://theaudiodb.com/api/v1/json/1/mvid.php?i=';
+    const fetchPromise = fetch(`${urlVideo}${idArtist}`);
+    fetchPromise.then(response => {
+       return response.json();
+    }).then(result => {
+      
+        pintarVideos(result);
+      
+    }).catch(err => {
+        console.log('fallo!: ', err);
+        informacion.innerHTML = `<div class="row justify-content-center text-center">
+<p class="mb-3 col-12  align-self-center" style="color: red; font-weight: bold">Videos no encontrados. </p>
+
+</div>`
+
+    });
+    
+}
+
+function pintarVideos(result){
+ 
+
+for (let i = 0; i < result.mvids.length; i++) {
+   
+        let discos = result.mvids[i].strTrack;
+        console.log("🚀 ~ file: main.js ~ line 121 ~ pintarVideos ~ discos", discos)
+    }
+
+  
+    
+}
+
+    
 }
 /*
 function mostrardatos(data) {
