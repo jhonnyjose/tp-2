@@ -1,8 +1,4 @@
-const API_KEY = '688e6d3058f53fb4dd31bb005e0620dd'; // INSERTEN SU API KEY ACA!
-const URL = 'http://api.openweathermap.org/';
-const api_mapa = `2N1Bv38lRypnAi30j1HQtuEUwQ3ytkVr`;
-const url_mapa = `http://api.tomtom.com`
-
+const URL = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s=';
 const button = document.getElementById("enviar");
 const botonbuscar = document.getElementById("busqueda");
 const informacion = document.getElementById("informaciongenerada");
@@ -10,12 +6,12 @@ const fragment = document.createDocumentFragment();
 const template = document.querySelector("#template-musico").content;
 const card = document.querySelector(".card");
 
-//const fondo =document.querySelector(".fondo");
+
 
 
 button.addEventListener("click", () => {
-    ciudad(botonbuscar.value);
-    card.setAttribute(`style`, `display:none`)
+    artista(botonbuscar.value);
+   // card.setAttribute(`style`, `display:none`)
 
 
 });
@@ -25,11 +21,11 @@ nuevaBusqueda.addEventListener("click",() =>{
     console.log("tocado")
 })*/
 
-function ciudad(ciudadbuscada) {
-    // console.log('Palabra', ciudadbuscada);
-    const fetchPromise = fetch(`${URL}data/2.5/weather?q=${ciudadbuscada}&units=metric&lang=es&appid=${API_KEY}`);
+function artista(artistaBuscado) {
+    
+    const fetchPromise = fetch(`${URL}${artistaBuscado}`);
     fetchPromise.then(response => {
-        //  console.log('result', response);
+         console.log('result', response);
         return response.json();
     }).then(result => {
         //    console.log('data', result);
@@ -40,7 +36,7 @@ function ciudad(ciudadbuscada) {
     }).catch(err => {
         console.log('fallo!: ', err);
         informacion.innerHTML = `<div class="row justify-content-center text-center">
-<p class="mb-3 col-12  align-self-center" style="color: red; font-weight: bold">Ciudad no encontrada, intente nuevamente por favor. </p>
+<p class="mb-3 col-12  align-self-center" style="color: red; font-weight: bold">Artista no encontrado. </p>
 <button type="button" class="btn btn-primary mt-3  col-2 align-self-center" onclick="location.reload()">Volver a intentarlo</button>
 </div>`
 
@@ -50,50 +46,33 @@ function ciudad(ciudadbuscada) {
 
 
 function localStore(result) {
-    if (!localStorage.getItem("climaConsultado")) {
+    if (!localStorage.getItem("artistaConsultado")) {
         var arrayDatos = [];
     } else {
-        arrayDatos = JSON.parse(localStorage.climaConsultado);
+        arrayDatos = JSON.parse(localStorage.artistaConsultado);
 
     }
 
-    var temp = result.main.temp;
-    var tempMax = result.main.temp_max;
-    var tempMin = result.main.temp_min;
-    var hum = result.main.humidity;
-    var senTermica = result.main.feels_like;
-    var presAtmosferica = result.main.pressure;
-    var velViento = result.wind.speed;
-    var estClima = result.weather[0].description;
-    var icono = result.weather[0].icon;
-    let latitud = result.coord.lat;
-    var longitud = result.coord.lon;
-
+    var bio = result.strBiographyES;
+    console.log("🚀 ~ file: main.js ~ line 57 ~ localStore ~ bio", bio)
+    
+    
 
     data = {
-        temperatura: temp,
-        temperaturaMax: tempMax,
-        temperaturaMin: tempMin,
-        humedad: hum,
-        sensasionTermica: senTermica,
-        presionAtmosferica: presAtmosferica,
-        velocidadViento: velViento,
-        estadoClima: estClima,
-        iconoClima: icono,
-        latitud: latitud,
-        longitud: longitud,
+        bio: bio,
+     
     }
 
     arrayDatos.push(data);
 
-    localStorage.setItem("climaConsultado", JSON.stringify(arrayDatos));
-    recuperar_localStorage = JSON.parse(localStorage.getItem("climaConsultado"));
+    localStorage.setItem("artistaConsultado", JSON.stringify(arrayDatos));
+    recuperar_localStorage = JSON.parse(localStorage.getItem("artistaConsultado"));
 
 
-    mostrardatos(data);
+   // mostrardatos(data);
 
 }
-
+/*
 function mostrardatos(data) {
 
     informacion.innerHTML = '';
@@ -132,5 +111,5 @@ function mostrardatos(data) {
     informacion.appendChild(fragment);
 
 
-}
+}*/
 
