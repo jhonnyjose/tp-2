@@ -17,7 +17,7 @@
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-  
+
 
   <!-- Include Dexie -->
   <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
@@ -46,100 +46,118 @@
 
 <body class="center-block">
 
-  
+
+ 
+
+
+
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center"><img src="img/logo.png" alt="logo" class="img-fluid"></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <a href="#" class="brand-logo center">Tu Cantante</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         <li><a href="sass.html">Sass</a></li>
         <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
       </ul>
     </div>
   </nav>
 
-<div class="container">
-  <section class="row ">
-
-    <div class="col s-12">
-
-      <h1>Busca a tu artista favorito:</h1>
-
-      <form>
-
-        <label for="busqueda">Conocer a:</label>
-        <input title="Search" id="busqueda" class="form-control" type="text" required placeholder="Coldplay" />
-        <button id="enviar" type="button" class="btn">Enviar</button>
-
-
-      </form>
-
-
-    </div>
-  </section>
-
-  <section id="informaciongenerada" class="row center">
-    <template id="template-musico" class="col s-12">
-
-
-      <img src="img/grupo-sin-logo.png" alt="logo del artista" class="responsive-img" id="logo">
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
 
 
 
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="img/icon-512x512.png" alt="imagen del grupo">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i
-              class="material-icons right">more_vert</i></span>
 
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Biografía<i class="material-icons right">close</i></span>
-          <p class="left-align">No disponible. Intenta de nuevo por favor.
-          </p>
-        </div>
+  <div class="container">
+    <section class="row ">
+
+      <div class="col s-12">
+
+        <h1>Busca a tu artista favorito:</h1>
+
+        <form>
+
+          <label for="busqueda">Conocer a:</label>
+          <input title="Search" id="busqueda" class="form-control" type="text" required placeholder="Coldplay" />
+          <button id="enviar" type="button" class="btn">Enviar</button>
+
+
+        </form>
+
+
       </div>
+    </section>
 
-      <ul class="collapsible">
-        <li>
-          <div class="collapsible-header"><i class="material-icons">music_video</i>Género musical</div>
-          <div class="collapsible-body"><span>Información no disponible.</span></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">public</i>Sitio Web</div>
-          <div class="collapsible-body"><span><a href="" target="_blank"> Información no disponible. </a></span></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">group</i>Redes sociales</div>
+    <section id="informaciongenerada" class="row center">
+      <template id="template-musico" class="col s-12">
 
-          <div class="collapsible-body">
-            <ul class="row center">
-              <li class="col s-6"><img src="img/facebook.png" alt="facebook"><a href="" target="_blank"> Información no disponible.</a></li>
-              <li class="col s-6"><img src="img/twitter.png" alt="twitter"><a href="" target="_blank">Información no disponible. </a></li>
-            </ul>
-          
+
+        <img src="img/grupo-sin-logo.png" alt="logo del artista" class="responsive-img" id="logo">
+
+
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/icon-512x512.png" alt="imagen del grupo">
           </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                class="material-icons right">more_vert</i></span>
 
-      
-        </li>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Biografía<i class="material-icons right">close</i></span>
+            <p class="left-align">No disponible. Intenta de nuevo por favor.
+            </p>
+          </div>
+        </div>
 
-        <li>
-          <div class="collapsible-header"><i class="material-icons">image</i>Otras Imágenes</div>
-          
-          <div class="collapsible-body">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">music_video</i>Género musical</div>
+            <div class="collapsible-body"><span>Información no disponible.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">public</i>Sitio Web</div>
+            <div class="collapsible-body"><span><a href="" target="_blank"> Información no disponible. </a></span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">group</i>Redes sociales</div>
 
-            <div class="carousel">
-              <img src="img/icon-512x512.png" alt="imagen 1" class="carousel-item">
-              <img src="img/icon-512x512.png" alt="imagen 2" class="carousel-item">
-              <img src="img/icon-512x512.png" alt="imagen 3" class="carousel-item">
-              <img src="img/icon-512x512.png" alt="imagen 4" class="carousel-item">
+            <div class="collapsible-body">
+              <ul class="row center">
+                <li class="col s-6"><img src="img/facebook.png" alt="facebook"><a href="" target="_blank"> Información
+                    no disponible.</a></li>
+                <li class="col s-6"><img src="img/twitter.png" alt="twitter"><a href="" target="_blank">Información no
+                    disponible. </a></li>
+              </ul>
+
             </div>
 
-          </div>
-        </li>
-      </ul>
+
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons">image</i>Otras Imágenes</div>
+
+            <div class="collapsible-body">
+
+              <div class="carousel">
+                <img src="img/icon-512x512.png" alt="imagen 1" class="carousel-item">
+                <img src="img/icon-512x512.png" alt="imagen 2" class="carousel-item">
+                <img src="img/icon-512x512.png" alt="imagen 3" class="carousel-item">
+                <img src="img/icon-512x512.png" alt="imagen 4" class="carousel-item">
+              </div>
+
+            </div>
+          </li>
+        </ul>
 
 
 
@@ -149,23 +167,25 @@
 
 
 
-    </template>
-
-    <template>
-      <ul>
-        <li>cancion</li>
-        <li>video</li>
-      </ul>
-
-    </template>
+      </template>
 
 
-  </section>
+      <!-- Ver esto luego
+      <template>
+        <ul>
+          <li>cancion</li>
+          <li>video</li>
+        </ul>
+
+      </template>
+-->
+
+    </section>
 
 
 
-</div>
-  
+  </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -174,7 +194,15 @@
   <script src="js/main.js"></script>
   <script src="js/materialize/materialize.js"></script>
 
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
 
+ 
+</script>
 
 
 
