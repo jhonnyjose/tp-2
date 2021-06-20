@@ -54,6 +54,7 @@ function localStore(result) {
     }
 
     let idArtista = result.artists[0].idArtist;
+    let nombreArtista = result.artists[0].strArtist;
     let logo =result.artists[0].strArtistLogo;
     let bio = result.artists[0].strBiographyES;
     let imgGrupo = result.artists[0].strArtistThumb;
@@ -68,6 +69,7 @@ function localStore(result) {
 
    let  data = {
         idArtista : idArtista,
+        nombreArtista :nombreArtista,
         logo : logo,
         bio: bio,
         imgGrupo: imgGrupo,
@@ -136,9 +138,10 @@ function mostrardatos(data) {
 
   
     informacion.innerHTML = '';
+    template.querySelector('.card-title').textContent = data.nombreArtista;
     template.querySelector('#logo').setAttribute(`src`, `${data.logo}`);
     template.querySelector('.activator').setAttribute(`src`, `${data.imgGrupo}`);
-    template.querySelector('.card-title ~ p').textContent = data.bio;
+    template.querySelector('.card-reveal .card-title ~ p').textContent = data.bio;
 
     
    /* template.querySelector(".card-header").textContent = botonbuscar.value.toUpperCase();
