@@ -117,7 +117,9 @@ function pintarVideos(result){
 
 for (let i = 0; i < result.mvids.length; i++) {
    
-        let discos = result.mvids[i].strTrack;
+        let discos = [];
+        discos.push(result.mvids[i].strTrack);
+        
         console.log("🚀 ~ file: main.js ~ line 121 ~ pintarVideos ~ discos", discos)
     }
 
