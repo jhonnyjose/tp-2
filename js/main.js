@@ -66,7 +66,7 @@ function localStore(result) {
     
     
 
-    data = {
+   let  data = {
         idArtista : idArtista,
         logo : logo,
         bio: bio,
@@ -113,22 +113,32 @@ function videos(idArtist){
 }
 
 function pintarVideos(result){
- 
+
+    typeof
+    console.log(typeof result)
 
 for (let i = 0; i < result.mvids.length; i++) {
-   
-        let discos = [];
-        discos.push(result.mvids[i].strTrack);
         
-        console.log("🚀 ~ file: main.js ~ line 121 ~ pintarVideos ~ discos", discos)
+        let canciones = result.mvids[i].strTrack;
+        let videosCanciones = result.mvids[i].strMusicVid;
+
+
+
+        VidYCan = {
+            cancion : canciones,
+            video : videosCanciones[i],
+        }
+        
     }
 
-  
+    console.log("🚀 ~ file: main.js ~ line 124 ~ pintarVideos ~ VidYCan", VidYCan)
+    return VidYCan;
+    
     
 }
 
     
-}
+
 /*
 function mostrardatos(data) {
 
