@@ -70,9 +70,9 @@ function localStore(result) {
         idArtista : idArtista,
         logo : logo,
         bio: bio,
-        'imagen del grupo': imgGrupo,
-        'Genero del grupo': genMus,
-        'sitio web': sitWeb,
+        imgGrupo: imgGrupo,
+        Genero: genMus,
+        sitioWeb: sitWeb,
         facebook : facebook,
         twitter : twitter,
      
@@ -87,7 +87,7 @@ function localStore(result) {
     recuperar_localStorage = JSON.parse(localStorage.getItem("artistaConsultado"));
 
 
-   //mostrardatos(data);
+  mostrardatos(data);
 
 }
 
@@ -114,36 +114,34 @@ function videos(idArtist){
 
 function pintarVideos(result){
 
-    typeof
-    console.log(typeof result)
 
 for (let i = 0; i < result.mvids.length; i++) {
         
         let canciones = result.mvids[i].strTrack;
         let videosCanciones = result.mvids[i].strMusicVid;
 
+        //ver estooo
 
-
-        VidYCan = {
-            cancion : canciones,
-            video : videosCanciones[i],
-        }
+ 
         
     }
-
-    console.log("🚀 ~ file: main.js ~ line 124 ~ pintarVideos ~ VidYCan", VidYCan)
-    return VidYCan;
     
     
 }
 
     
 
-/*
+
 function mostrardatos(data) {
 
+  
     informacion.innerHTML = '';
-    template.querySelector(".card-header").textContent = botonbuscar.value.toUpperCase();
+    template.querySelector('#logo').setAttribute(`src`, `${data.logo}`);
+    template.querySelector('.activator').setAttribute(`src`, `${data.imgGrupo}`);
+    template.querySelector('.card-title ~ p').textContent = data.bio;
+
+    
+   /* template.querySelector(".card-header").textContent = botonbuscar.value.toUpperCase();
     template.querySelector(".card-body ul li:nth-child(1)").textContent = `Temperatura Actual: ` + data.temperatura + ` °C`;
     template.querySelector(".card-body ul li:nth-child(2)").textContent = `Temperatura Máxima: ` + data.temperaturaMax + ` °C`;
     template.querySelector(".card-body ul li:nth-child(3)").textContent = `Temperatura Mínima: ` + data.temperaturaMin + ` °C`;
@@ -171,12 +169,12 @@ function mostrardatos(data) {
     template.querySelector(".card-body .mapa").innerHTML = imagenMapa;
     //  console.log(imagenMapa)
 
-
+*/
     const clone = template.cloneNode(true);
     fragment.appendChild(clone);
 
     informacion.appendChild(fragment);
 
 
-}*/
+}
 
