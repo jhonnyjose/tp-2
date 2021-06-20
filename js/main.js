@@ -9,9 +9,10 @@ const card = document.querySelector(".card");
 
 
 
+
 button.addEventListener("click", () => {
     artista(botonbuscar.value);
-  // card.setAttribute(`style`, `display:none`)
+    // card.setAttribute(`style`, `display:none`)
 
 
 });
@@ -22,13 +23,13 @@ nuevaBusqueda.addEventListener("click",() =>{
 })*/
 
 function artista(artistaBuscado) {
-    
+
     const fetchPromise = fetch(`${URL}${artistaBuscado}`);
     fetchPromise.then(response => {
-       //  console.log('result', response);
+        //  console.log('result', response);
         return response.json();
     }).then(result => {
-      //    console.log('data', result);
+        //    console.log('data', result);
 
         localStore(result);
 
@@ -55,7 +56,7 @@ function localStore(result) {
 
     let idArtista = result.artists[0].idArtist;
     let nombreArtista = result.artists[0].strArtist;
-    let logo =result.artists[0].strArtistLogo;
+    let logo = result.artists[0].strArtistLogo;
     let bio = result.artists[0].strBiographyES;
     let imgGrupo = result.artists[0].strArtistThumb;
     let genMus = result.artists[0].strGenre;
@@ -64,23 +65,23 @@ function localStore(result) {
     let twitter = result.artists[0].strTwitter;
 
 
-    
-    
 
-   let  data = {
-        idArtista : idArtista,
-        nombreArtista :nombreArtista,
-        logo : logo,
+
+
+    let data = {
+        idArtista: idArtista,
+        nombreArtista: nombreArtista,
+        logo: logo,
         bio: bio,
         imgGrupo: imgGrupo,
         Genero: genMus,
         sitioWeb: sitWeb,
-        facebook : facebook,
-        twitter : twitter,
-     
+        facebook: facebook,
+        twitter: twitter,
+
     }
 
-   // videos(idArtista);
+    // videos(idArtista);
 
 
     arrayDatos.push(data);
@@ -89,20 +90,20 @@ function localStore(result) {
     recuperar_localStorage = JSON.parse(localStorage.getItem("artistaConsultado"));
 
 
-  mostrardatos(data);
+    mostrardatos(data);
 
 }
 
 
-function videos(idArtist){
+function videos(idArtist) {
     let urlVideo = 'https://theaudiodb.com/api/v1/json/1/mvid.php?i=';
     const fetchPromise = fetch(`${urlVideo}${idArtist}`);
     fetchPromise.then(response => {
-       return response.json();
+        return response.json();
     }).then(result => {
-      
+
         pintarVideos(result);
-      
+
     }).catch(err => {
         console.log('fallo!: ', err);
         informacion.innerHTML = `<div class="row justify-content-center text-center">
@@ -111,45 +112,45 @@ function videos(idArtist){
 </div>`
 
     });
-    
+
 }
 
-function pintarVideos(result){
+function pintarVideos(result) {
 
 
-for (let i = 0; i < result.mvids.length; i++) {
-        
+    for (let i = 0; i < result.mvids.length; i++) {
+
         let canciones = result.mvids[i].strTrack;
         let videosCanciones = result.mvids[i].strMusicVid;
 
         //ver estooo
 
- 
-        
+
+
     }
-    
-    
+
+
 }
 
-    
+
 
 
 function mostrardatos(data) {
 
-  
+
     informacion.innerHTML = '';
     template.querySelector('.card-title').textContent = data.nombreArtista;
     template.querySelector('#logo').setAttribute(`src`, `${data.logo}`);
     template.querySelector('.activator').setAttribute(`src`, `${data.imgGrupo}`);
     template.querySelector('.card-reveal .card-title ~ p').textContent = data.bio;
     template.querySelector('.collapsible li:nth-child(1) .collapsible-body ').textContent = data.Genero;
-    console.log("🚀 ~ file: main.js ~ line 146 ~ mostrardatos ~ template", template)
 
 
-    
 
-    
-   /* template.querySelector(".card-header").textContent = botonbuscar.value.toUpperCase();
+
+
+ 
+    /* template.querySelector(".card-header").textContent = botonbuscar.value.toUpperCase();
     template.querySelector(".card-body ul li:nth-child(1)").textContent = `Temperatura Actual: ` + data.temperatura + ` °C`;
     template.querySelector(".card-body ul li:nth-child(2)").textContent = `Temperatura Máxima: ` + data.temperaturaMax + ` °C`;
     template.querySelector(".card-body ul li:nth-child(3)").textContent = `Temperatura Mínima: ` + data.temperaturaMin + ` °C`;
@@ -185,4 +186,5 @@ function mostrardatos(data) {
 
 
 }
+
 
