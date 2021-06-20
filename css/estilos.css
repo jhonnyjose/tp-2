@@ -5,3 +5,16 @@
 nav{
     background-color: #78CAEF;
 }
+
+.azul{
+    background-color: #78CAEF;
+}
+
+.btn:hover{
+    background-color: #447992;
+}
+
+img.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
