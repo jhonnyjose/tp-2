@@ -25,10 +25,10 @@ function artista(artistaBuscado) {
     
     const fetchPromise = fetch(`${URL}${artistaBuscado}`);
     fetchPromise.then(response => {
-         console.log('result', response);
+       //  console.log('result', response);
         return response.json();
     }).then(result => {
-        //    console.log('data', result);
+      //    console.log('data', result);
 
         localStore(result);
 
@@ -53,7 +53,7 @@ function localStore(result) {
 
     }
 
-    var bio = result.strBiographyES;
+    var bio = result.artists[0].strBiographyES;
     console.log("🚀 ~ file: main.js ~ line 57 ~ localStore ~ bio", bio)
     
     
