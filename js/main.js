@@ -11,7 +11,7 @@ const card = document.querySelector(".card");
 
 button.addEventListener("click", () => {
     artista(botonbuscar.value);
-   // card.setAttribute(`style`, `display:none`)
+  // card.setAttribute(`style`, `display:none`)
 
 
 });
@@ -142,6 +142,11 @@ function mostrardatos(data) {
     template.querySelector('#logo').setAttribute(`src`, `${data.logo}`);
     template.querySelector('.activator').setAttribute(`src`, `${data.imgGrupo}`);
     template.querySelector('.card-reveal .card-title ~ p').textContent = data.bio;
+    template.querySelector('.collapsible li:nth-child(1) .collapsible-body ').textContent = data.Genero;
+    console.log("🚀 ~ file: main.js ~ line 146 ~ mostrardatos ~ template", template)
+
+
+    
 
     
    /* template.querySelector(".card-header").textContent = botonbuscar.value.toUpperCase();

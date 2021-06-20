@@ -21,14 +21,10 @@
 
   <!-- Include Dexie -->
   <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
-  <style>
-    ul li {
-      list-style: none;
-    }
-  </style>
+
 </head>
 
-<body class="container center">
+<body class="container center-block">
 
   <section class="row ">
     
@@ -50,7 +46,7 @@
     </div>
   </section>
 
-    <section id="informaciongenerada" class="row">
+    <section id="informaciongenerada" class="row center">
         <template id="template-musico" class="col s-12">
            
 
@@ -68,21 +64,27 @@
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Biografía<i class="material-icons right">close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                <p class="left-align">Here is some more information about this product that is only revealed once clicked on.</p>
               </div>
             </div>
 
-
-            
-            
-            <p>Genero musical:</p>
-            <p>Sitio Web: <a href="#"> Sitio</a></p>
-            <p>Redes sociales</p>
-            <ul>
-              <li>Facebook</li>
-              <li>Twitter</li>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header"><i class="material-icons">music_video</i>Género musical</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">public</i>Sitio Web</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">group</i>Redes sociales</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+              </li>
             </ul>
-        </template>
+
+
+    </template>
 
       <template>
         <ul>
@@ -104,6 +106,19 @@
   <script src="js/main.js"></script>
   <script src="js/materialize/materialize.js"></script>
   <script src="js/materialize/materialize.min.js"></script>
+ <!-- inicializar el toggle-->
+
+ <script> 
+ 
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+        
+</script>
+
 </body>
 
 </html>
