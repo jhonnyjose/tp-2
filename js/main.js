@@ -144,7 +144,10 @@ function mostrardatos(data) {
     template.querySelector('.activator').setAttribute(`src`, `${data.imgGrupo}`);
     template.querySelector('.card-reveal .card-title ~ p').textContent = data.bio;
     template.querySelector('.collapsible li:nth-child(1) .collapsible-body ').textContent = data.Genero;
+    template.querySelector('.collapsible li:nth-child(2) .collapsible-body a').textContent=data.sitioWeb;
+    template.querySelector('.collapsible li:nth-child(2) .collapsible-body a').setAttribute(`href`,`https://`+`${data.sitioWeb}`);
 
+    console.log("🚀 ~ file: main.js ~ line 148 ~ mostrardatos ~ data.sitioWeb", data.sitioWeb)
 
 
 
