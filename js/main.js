@@ -80,7 +80,7 @@ function localStore(result) {
      
     }
 
-    videos(idArtista);
+   // videos(idArtista);
 
 
     arrayDatos.push(data);
