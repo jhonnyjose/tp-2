@@ -164,39 +164,60 @@ function pintarVideos(result) {
 
 
     if (result.mvids != '' && result.mvids != null) {
-        for (let i = 0; i < result.mvids.length; i++) {
-            let div = document.createElement('div');
-            let p = document.createElement('p');
-            let iframe = document.createElement('iframe');
+        for (let i = 0; i < result.mvids.length; i++) {/*
 
+
+        <div>              
+            <a href="">
+                <p></p>
+                <img src="" alt="">
+                <button>Ver video</button>
+            </a>
+        </div>
+*/
+            
+            let div = document.createElement('div');
+            let a = document.createElement('a');
+            let p = document.createElement('p');
+            let imgDisco = document.createElement('img');
+          
+
+            imgDisco.setAttribute(`class`, `responsive-img`);
+            imgDisco.setAttribute(`class`, `img-pc`);
 
             div.setAttribute(`class`,`carousel-item`);
+            a.setAttribute(`target`,`_blank`);
+           
+            let enlaces = result.mvids[i].strMusicVid;
+            a.setAttribute(`href`,`${enlaces}` );
 
-
-            iframe.setAttribute(`height`, 315);
-            iframe.setAttribute(`width`, 560);
-            iframe.setAttribute(`src`, '');
-            iframe.setAttribute(`frameborder`, 0);
-            iframe.setAttribute(`allow`,`accelerometer`);
-            iframe.setAttribute(`autoplay`, true);
-            iframe.setAttribute(`clipboard-write`, true);
-            iframe.setAttribute(`encrypted-media`, true);
-            iframe.setAttribute(`gyroscope`, true);
-            iframe.setAttribute(`picture-in-picture`, true);
-            iframe.setAttribute(`allowfullscreen`, true);
-    
             let canciones = result.mvids[i].strTrack;
-    
-            let videosCanciones = result.mvids[i].strMusicVid;
-    
             p.textContent = `${canciones}`;
-            iframe.setAttribute(`src`, `${videosCanciones}`)
 
-            div.appendChild(p);
-            div.appendChild(iframe);
-    
+
+          
+            let rutaDisco = result.mvids[i].strTrackThumb;
+
+            if(rutaDisco != '' && rutaDisco != null ){
+                imgDisco.setAttribute(`src`,`${rutaDisco}` );
+                imgDisco.setAttribute(`alt`,`${canciones}` );
+            }else{
+                imgDisco.setAttribute(`src`,`img/icon-512x512.png` );
+                imgDisco.setAttribute(`alt`,`Sin imagen previa` );
+            }
+            
+
+           
+           
+            a.appendChild(p);
+            a.appendChild(imgDisco);
+            
+            
+            div.appendChild(a);
             
             texto.appendChild(div);
+
+                  
            
         } 
     }
