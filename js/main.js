@@ -6,6 +6,8 @@ const fragment = document.createDocumentFragment();
 const template = document.querySelector("#template-musico").content;
 const card = document.querySelector(".card");
 const busqueda = document.querySelector(".valign-wrapper");
+const container1 = document.querySelector(".container");
+
 
 
 
@@ -16,7 +18,8 @@ button.addEventListener("click", () => {
     busqueda.setAttribute(`style`, `display:none`)
 
 
-});s
+});
+s
 
 /*
 nuevaBusqueda.addEventListener("click",() =>{
@@ -31,16 +34,32 @@ function artista(artistaBuscado) {
         return response.json();
     }).then(result => {
         //    console.log('data', result);
-
+        document.querySelector('body').classList.add('fondoEncontrado');
         localStore(result);
 
 
     }).catch(err => {
         console.log('fallo!: ', err);
-        informacion.innerHTML = `<div class="row justify-content-center text-center">
-<p class="mb-3 col-12  align-self-center" style="color: red; font-weight: bold">Artista no encontrado. </p>
-<button type="button" class="btn btn-primary mt-3  col-2 align-self-center" onclick="location.reload()">Volver a intentarlo</button>
-</div>`
+
+        document.querySelector('body').classList.add('fondos');
+       
+    
+        informacion.innerHTML = `
+        
+        
+        <div class="row">
+            <div class=" valign-wrapper  ">
+
+                    <div class="col s12 m12 l12   center">
+                        <p >Artista no encontrado. </p>
+                        <button type="button" class="btn azul pulse" onclick="location.reload()">Intentar nuevamente</button>
+                    </div>
+
+            </div>
+        </div>
+
+        
+`
 
     });
 
