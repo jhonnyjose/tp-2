@@ -197,16 +197,18 @@ function pintarVideos(result) {
     }
 
 
-    console.log("🚀 ~ file: main.js ~ line 196 ~ pintarVideos ~ texto", texto)
+    const clone = template.cloneNode(true);
+    fragment.appendChild(clone);
 
-    return texto;
+    informacion.appendChild(fragment);
+    
 
 }
 
 
 
 
-function mostrardatos(data, texto) {
+function mostrardatos(data) {
 
 
     informacion.innerHTML = '';
@@ -260,16 +262,11 @@ function mostrardatos(data, texto) {
 
 
 
-        console.log(texto)
 
 
 
 
 
-    const clone = template.cloneNode(true);
-    fragment.appendChild(clone);
-
-    informacion.appendChild(fragment);
 
 
 }
