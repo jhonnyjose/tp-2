@@ -19,12 +19,7 @@ button.addEventListener("click", () => {
 
 
 });
-s
 
-/*
-nuevaBusqueda.addEventListener("click",() =>{
-    console.log("tocado")
-})*/
 
 function artista(artistaBuscado) {
 
@@ -42,8 +37,8 @@ function artista(artistaBuscado) {
         console.log('fallo!: ', err);
 
         document.querySelector('body').classList.add('fondos');
-       
-    
+
+
         informacion.innerHTML = `
         
         
@@ -109,7 +104,7 @@ function localStore(result) {
 
     }
 
-    // videos(idArtista);
+    videos(idArtista);
 
 
     arrayDatos.push(data);
@@ -133,11 +128,28 @@ function videos(idArtist) {
         pintarVideos(result);
 
     }).catch(err => {
-        console.log('fallo!: ', err);
-        informacion.innerHTML = `<div class="row justify-content-center text-center">
-<p class="mb-3 col-12  align-self-center" style="color: red; font-weight: bold">Videos no encontrados. </p>
 
-</div>`
+
+
+
+        console.log('fallo!: ', err);
+
+        document.querySelector('body').classList.add('fondos');
+
+
+        informacion.innerHTML = `
+        
+        
+        <div class="row">
+            <div class=" valign-wrapper  ">
+
+                    <div class="col s12 m12 l12   center">
+                        <p >Algo fallo. </p>
+                        <button type="button" class="btn azul pulse" onclick="location.reload()">Intentar nuevamente</button>
+                    </div>
+
+            </div>
+        </div>`
 
     });
 
@@ -145,25 +157,56 @@ function videos(idArtist) {
 
 function pintarVideos(result) {
 
+    let texto = template.querySelector('.collapsible li:nth-child(5) .collapsible-body .videos .carousel-item');
 
-    for (let i = 0; i < result.mvids.length; i++) {
+    if (result.mvids != '' && result.mvids != null) {
+        for (let i = 0; i < result.mvids.length; i++) {
 
-        let canciones = result.mvids[i].strTrack;
-        let videosCanciones = result.mvids[i].strMusicVid;
-
-        //ver estooo
-
-
-
+            let p = document.createElement('p');
+            let iframe = document.createElement('iframe');
+            iframe.setAttribute(`height`, 315);
+            iframe.setAttribute(`width`, 560);
+            iframe.setAttribute(`src`, '');
+            iframe.setAttribute(`frameborder`, 0);
+            iframe.setAttribute(`allow`,`accelerometer`);
+            iframe.setAttribute(`autoplay`, true);
+            iframe.setAttribute(`clipboard-write`, true);
+            iframe.setAttribute(`encrypted-media`, true);
+            iframe.setAttribute(`gyroscope`, true);
+            iframe.setAttribute(`picture-in-picture`, true);
+            iframe.setAttribute(`allowfullscreen`, true);
+    
+            let canciones = result.mvids[i].strTrack;
+    
+            let videosCanciones = result.mvids[i].strMusicVid;
+    
+            p.textContent = `${canciones}`;
+            iframe.setAttribute(`src`, `${videosCanciones}`)
+    
+            texto.appendChild(p);
+            texto.appendChild(iframe);
+           
+        } 
+    }
+    else
+    {
+        let p2 = document.createElement('p');
+        p2.textContent = 'Sin Videos';
+        texto.appendChild(p2);
+        
     }
 
+
+    console.log("🚀 ~ file: main.js ~ line 196 ~ pintarVideos ~ texto", texto)
+
+    return texto;
 
 }
 
 
 
 
-function mostrardatos(data) {
+function mostrardatos(data, texto) {
 
 
     informacion.innerHTML = '';
@@ -217,7 +260,7 @@ function mostrardatos(data) {
 
 
 
-
+        console.log(texto)
 
 
 
