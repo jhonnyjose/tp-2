@@ -5,6 +5,7 @@ const informacion = document.getElementById("informaciongenerada");
 const fragment = document.createDocumentFragment();
 const template = document.querySelector("#template-musico").content;
 const card = document.querySelector(".card");
+const busqueda = document.querySelector(".valign-wrapper");
 
 
 
@@ -12,10 +13,10 @@ const card = document.querySelector(".card");
 
 button.addEventListener("click", () => {
     artista(botonbuscar.value);
-    // card.setAttribute(`style`, `display:none`)
+    busqueda.setAttribute(`style`, `display:none`)
 
 
-});
+});s
 
 /*
 nuevaBusqueda.addEventListener("click",() =>{
@@ -150,7 +151,7 @@ function mostrardatos(data) {
 
     template.querySelector('.card-title').textContent = data.nombreArtista;
 
-    if (data.logo != '') {
+    if (data.logo != '' && data.logo != null) {
         template.querySelector('#logo').setAttribute(`src`, `${data.logo}`);
     }
 
