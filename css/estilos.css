@@ -97,7 +97,7 @@ h1 {
 
   .fondoEncontrado{
       background-color: #FED05C;
-      transition: all .9s ease;
+      transition: all .5s ease;
   }
 
   .mb-3{

@@ -164,18 +164,8 @@ function pintarVideos(result) {
 
 
     if (result.mvids != '' && result.mvids != null) {
-        for (let i = 0; i < result.mvids.length; i++) {/*
+        for (let i = 0; i < result.mvids.length; i++) {
 
-
-        <div>              
-            <a href="">
-                <p></p>
-                <img src="" alt="">
-                <button>Ver video</button>
-            </a>
-        </div>
-*/
-            
             let div = document.createElement('div');
             let a = document.createElement('a');
             let p = document.createElement('p');
