@@ -157,13 +157,22 @@ function videos(idArtist) {
 
 function pintarVideos(result) {
 
-    let texto = template.querySelector('.collapsible li:nth-child(5) .collapsible-body .videos .carousel-item');
+    let texto = template.querySelector('.collapsible li:nth-child(5) .collapsible-body .videos ');
+
+
+
+
 
     if (result.mvids != '' && result.mvids != null) {
         for (let i = 0; i < result.mvids.length; i++) {
-
+            let div = document.createElement('div');
             let p = document.createElement('p');
             let iframe = document.createElement('iframe');
+
+
+            div.setAttribute(`class`,`carousel-item`);
+
+
             iframe.setAttribute(`height`, 315);
             iframe.setAttribute(`width`, 560);
             iframe.setAttribute(`src`, '');
@@ -182,9 +191,12 @@ function pintarVideos(result) {
     
             p.textContent = `${canciones}`;
             iframe.setAttribute(`src`, `${videosCanciones}`)
+
+            div.appendChild(p);
+            div.appendChild(iframe);
     
-            texto.appendChild(p);
-            texto.appendChild(iframe);
+            
+            texto.appendChild(div);
            
         } 
     }
@@ -195,6 +207,8 @@ function pintarVideos(result) {
         texto.appendChild(p2);
         
     }
+
+
 
 
     const clone = template.cloneNode(true);
