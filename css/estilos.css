@@ -89,6 +89,7 @@ h1 {
       font-size: 2em;
       color: #C69A69;
       font-weight: bold;
+      
   }
 
   
@@ -96,6 +97,7 @@ h1 {
 
   .fondoEncontrado{
       background-color: #FED05C;
+      transition: all .9s ease;
   }
 
   .mb-3{
