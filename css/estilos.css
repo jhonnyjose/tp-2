@@ -98,6 +98,7 @@ h1 {
 
   /*videos del carousel*/
 
-  .video-g{
-      height: 40em;
+
+  .img-videos{
+    max-width: 200px;
   }

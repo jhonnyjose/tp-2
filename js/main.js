@@ -183,7 +183,7 @@ function pintarVideos(result) {
           
 
             imgDisco.setAttribute(`class`, `responsive-img`);
-            imgDisco.setAttribute(`class`, `img-pc`);
+            imgDisco.setAttribute(`class`, `img-videos`);
 
             div.setAttribute(`class`,`carousel-item`);
             a.setAttribute(`target`,`_blank`);
