@@ -102,3 +102,35 @@ h1 {
   .img-videos{
     max-width: 200px;
   }
+
+
+  /*iconos de colores form de contacto */
+
+  
+  /* label color */
+  .input-field label {
+    color: #000;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: #78CAEF;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #78CAEF;
+    box-shadow: 0 1px 0 0 #78CAEF;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #78CAEF;
+    box-shadow: 0 1px 0 0 #78CAEF;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #78CAEF;
+    box-shadow: 0 1px 0 0 #78CAEF;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: #78CAEF;
+  }
