@@ -9,12 +9,63 @@ nav{
 .azul{
     background-color: #78CAEF;
 }
+.blanco{
+    color: white;
+}
 
 .btn:hover{
     background-color: #447992;
 }
 
-img.responsive-img {
+.responsive-img {
   max-width: 100%;
   height: auto;
+  
 }
+
+h1 {
+    font-size: 1em;
+    margin: 0.5em 0;
+  }
+
+  .inputcentrado{
+    text-align: center
+
+
+    
+  }
+
+  .valign-wrapper {
+    height: calc(100vh - 5em - 6em);
+  }
+
+
+@media (min-width:992px) {
+    .img-pc {
+
+        max-width: 300px;
+        
+      
+    }
+  }
+
+
+  /*footer */
+
+  html {
+    min-height: 100%;
+    position: relative;
+  }
+  body {
+    margin: 0;
+    margin-bottom: 5em;
+  }
+
+  footer {
+   
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5em;
+  
+  }

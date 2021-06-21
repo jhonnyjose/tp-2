@@ -47,13 +47,17 @@
 <body class="center-block">
 
 
- 
+
 
 
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Tu Cantante</a>
+      <a href="#" class="brand-logo center">
+        <h1>Tu Cantante</h1>
+      </a>
+
+
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html">Sass</a></li>
@@ -77,18 +81,21 @@
   <div class="container">
     <section class="row ">
 
-      <div class="col s-12">
+      <div class="col s12 m12 l12  valign-wrapper  ">
 
-        <h1>Busca a tu artista favorito:</h1>
+        <div class="col z-depth-6  center">
+          <form>
 
-        <form>
+            <label for="busqueda">Conocer a:</label>
+            <input title="Search" id="busqueda" class="form-control inputcentrado" type="text" required
+              placeholder="Coldplay" />
+            <button id="enviar" type="button" class="btn azul">Enviar</button>
 
-          <label for="busqueda">Conocer a:</label>
-          <input title="Search" id="busqueda" class="form-control" type="text" required placeholder="Coldplay" />
-          <button id="enviar" type="button" class="btn azul">Enviar</button>
+
+          </form>
+        </div>
 
 
-        </form>
 
 
       </div>
@@ -102,9 +109,9 @@
 
 
 
-        <div class="card sticky-action medium">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator responsive-img" src="img/icon-512x512.png" alt="imagen del grupo">
+        <div class="card sticky-action">
+          <div class="card-image waves-effect  waves-light ">
+            <img class="activator img-pc" src="img/icon-512x512.png" alt="imagen del grupo">
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">Card Title<i
@@ -186,6 +193,16 @@
 
   </div>
 
+  <footer class="page-footer azul blanco">
+    <div class="center">
+      <div class="container">
+
+        <p>Jhonny Diaz | PWA | II Trabajo Práctico</p>
+      </div>
+    </div>
+
+  </footer>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -194,15 +211,12 @@
   <script src="js/main.js"></script>
   <script src="js/materialize/materialize.js"></script>
 
-<script>
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-  });
-
- 
-</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+    });
+  </script>
 
 
 
