@@ -8,7 +8,8 @@ const precache = [
   './offline.html',
   './css/materialize.css',
   './css/materialize.min.css',
-  './css/estilos.css'
+  './css/estilos.css',
+  './img/icon-512x512.png',
 
   
 
