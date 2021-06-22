@@ -170,53 +170,57 @@ function pintarVideos(result) {
             let a = document.createElement('a');
             let p = document.createElement('p');
             let imgDisco = document.createElement('img');
-          
+
 
             imgDisco.setAttribute(`class`, `responsive-img`);
             imgDisco.setAttribute(`class`, `img-videos`);
 
-            div.setAttribute(`class`,`carousel-item`);
-            a.setAttribute(`target`,`_blank`);
-           
+            div.setAttribute(`class`, `carousel-item`);
+            a.setAttribute(`target`, `_blank`);
+
             let enlaces = result.mvids[i].strMusicVid;
-            a.setAttribute(`href`,`${enlaces}` );
+            a.setAttribute(`href`, `${enlaces}`);
 
             let canciones = result.mvids[i].strTrack;
             p.textContent = `${canciones}`;
 
 
-          
+
             let rutaDisco = result.mvids[i].strTrackThumb;
 
-            if(rutaDisco != '' && rutaDisco != null ){
-                imgDisco.setAttribute(`src`,`${rutaDisco}` );
-                imgDisco.setAttribute(`alt`,`${canciones}` );
-            }else{
-                imgDisco.setAttribute(`src`,`img/icon-512x512.png` );
-                imgDisco.setAttribute(`alt`,`Sin imagen previa` );
+            if (rutaDisco != '' && rutaDisco != null) {
+                imgDisco.setAttribute(`src`, `${rutaDisco}`);
+                imgDisco.setAttribute(`alt`, `${canciones}`);
+            } else {
+                imgDisco.setAttribute(`src`, `img/icon-512x512.png`);
+                imgDisco.setAttribute(`alt`, `Sin imagen previa`);
             }
-            
 
-           
-           
+
+
+
             a.appendChild(p);
             a.appendChild(imgDisco);
-            
-            
+
+
             div.appendChild(a);
-            
+
             texto.appendChild(div);
 
-                  
-           
-        } 
-    }
-    else
-    {
+
+
+        }
+    } else {
+        let div2 = document.createElement('div');
+        div2.setAttribute(`class`, `carousel-item`);
+
         let p2 = document.createElement('p');
         p2.textContent = 'Sin Videos';
-        texto.appendChild(p2);
-        
+
+        div2.appendChild(p2);
+        texto.appendChild(div2);
+       
+
     }
 
 
@@ -226,7 +230,7 @@ function pintarVideos(result) {
     fragment.appendChild(clone);
 
     informacion.appendChild(fragment);
-    
+
 
 }
 
