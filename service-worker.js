@@ -6,8 +6,11 @@ const precache = [
   './js/register-sw.js',
   './index.html',
   './offline.html',
-  '.css/materialize.css',
-  '.css/materialize.min.css'
+  './css/materialize.css',
+  './css/materialize.min.css',
+  './css/estilos.css'
+
+  
 
   
 ];
