@@ -261,16 +261,19 @@ function mostrardatos(data) {
     }
 
     if (data.sitioWeb != '' && data.sitioWeb != null) {
+        template.querySelector('.collapsible li:nth-child(2) .collapsible-body span').textContent = '';
         template.querySelector('.collapsible li:nth-child(2) .collapsible-body a').textContent = data.sitioWeb;
         template.querySelector('.collapsible li:nth-child(2) .collapsible-body a').setAttribute(`href`, `https://` + `${data.sitioWeb}`);
     }
 
     if (data.facebook != '' && data.facebook != null) {
+        template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(1)  span').textContent = '';
         template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(1) a').textContent = data.facebook;
         template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(1) a').setAttribute(`href`, `https://` + `${data.facebook}`);
     }
 
     if (data.twitter != '' && data.twitter != null) {
+        template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(2)  span').textContent = '';
         template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(2) a').textContent = data.twitter;
         template.querySelector('.collapsible li:nth-child(3) .collapsible-body ul li:nth-child(2) a').setAttribute(`href`, `https://` + `${data.twitter}`);
     }
