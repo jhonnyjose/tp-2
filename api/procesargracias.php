@@ -7,7 +7,7 @@ $mensaje = $_POST['textarea1'];
 $subject = 'mensaje app';
 
 $enviaPara = 'jhonny.diaz@davinci.edu.ar';
-$enviado="gracias.html";
+$enviado="../gracias.html";
 
 
 $textoCorreo = '';
