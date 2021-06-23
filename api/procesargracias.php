@@ -1,4 +1,5 @@
 <?php
+header('content-type: application/json');
 
 $nombre = $_POST['icon_prefix'];
 $correo = $_POST['email'];
