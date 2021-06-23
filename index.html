@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>Jhonny Díaz, Cátedra PWA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Material  -->
+  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Include Dexie -->
+  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+  <!-- funcionamiento de carrusel y togle -->
+
+
+  <script>
+    document.addEventListener('click', function () {
+
+      var collapsible = document.querySelectorAll('.collapsible');
+      var options = {
+        onOpenEnd: function () {
+          var carousel = document.querySelectorAll('.carousel');
+          var cInstances = M.Carousel.init(carousel, {
+            indicators: true
+          });
+
+        }
+      };
+      var instances = M.Collapsible.init(collapsible, options);
+
+    });
+  </script>
+
+</head>
+
+<body class="center-block">
+
+
+
+
+
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">
+        <h1>Tu Cantante</h1>
+      </a>
+
+
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+
+        <li><a href="contacto.html">Contacto</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sass.html">Sass</a></li>
+
+    <li><a href="contacto.html">Contacto</a></li>
+
+  </ul>
+
+
+
+
+  <div class="container">
+    <section class="row ">
+
+      <div class=" valign-wrapper  ">
+
+        <div class="col s12 m12 l12   center">
+          <form>
+
+            <label for="busqueda">Conocer a:</label>
+
+            <input title="Search" id="busqueda" class="form-control inputcentrado" type="text" required
+              placeholder="Coldplay" />
+
+            <button id="enviar" type="button" class="btn azul ">Enviar</button>
+
+
+          </form>
+        </div>
+
+
+
+
+      </div>
+    </section>
+
+    <section id="informaciongenerada" class="row center">
+      <template id="template-musico" class="col s-12">
+
+
+        <img src="img/grupo-sin-logo.png" alt="logo del artista" class="responsive-img" id="logo">
+
+
+
+        <div class="card sticky-action">
+          <div class="card-image waves-effect  waves-light ">
+            <img class="activator img-pc" src="img/icon-512x512.png" alt="imagen del grupo">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                class="material-icons right">more_vert</i></span>
+
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Biografía<i class="material-icons right">close</i></span>
+            <p class="left-align">No disponible. Intenta de nuevo por favor.
+            </p>
+          </div>
+        </div>
+
+        <ul class="collapsible white">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">music_video</i>Género musical</div>
+            <div class="collapsible-body"><span>Información no disponible.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">public</i>Sitio Web</div>
+            <div class="collapsible-body"><span> Información no disponible.</span><a href="" target="_blank"></a> </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">group</i>Redes sociales</div>
+
+            <div class="collapsible-body">
+              <ul class="row center">
+                <li class="col s-3 offset-s3"><img src="img/facebook.png" alt="facebook">
+                  <span>Información no disponible.</span>
+                  <a href="" target="_blank"> </a>
+                </li>
+                <li class="col s-3"><img src="img/twitter.png" alt="twitter">
+                  <span>Información no disponible.</span>
+                  <a href="" target="_blank"></a></li>
+              </ul>
+
+            </div>
+
+
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons">image</i>Otras Imágenes</div>
+
+            <div class="collapsible-body">
+
+              <div class="carousel carousel-slider">
+                <img src="img/icon-512x512.png" alt="imagen 1" class="carousel-item">
+                <img src="img/icon-512x512.png" alt="imagen 2" class="carousel-item">
+                <img src="img/icon-512x512.png" alt="imagen 3" class="carousel-item">
+                <img src="img/icon-512x512.png" alt="imagen 4" class="carousel-item">
+              </div>
+
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">video_library</i>Videos</div>
+
+            <div class="collapsible-body ">
+
+              <div class="carousel carousel-slider videos">
+
+
+
+              </div>
+
+            </div>
+          </li>
+        </ul>
+
+
+
+
+        <div class="text-center">
+          <button type="button" class="btn azul mb-3" onclick="location.reload()">Buscar otro Artista
+          </button>
+
+        </div>
+
+
+
+
+      </template>
+
+
+
+
+    </section>
+
+
+
+  </div>
+
+  <footer class="page-footer azul textofooter">
+    <div class="center">
+      <div class="container">
+
+        <p>Jhonny Diaz | PWA | II Trabajo Práctico</p>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="js/register-sw.js"></script>
+  <!--<script src="js/to-do.js"></script>-->
+  <script src="js/main.js"></script>
+  <script src="js/materialize/materialize.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+    });
+  </script>
+
+
+
+</body>
+
+</html>
