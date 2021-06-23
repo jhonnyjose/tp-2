@@ -12,7 +12,9 @@ nav{
 .blanco{
     color: white;
 }
-
+.negro, nav .brand-logo, nav ul a{
+  color: #070B0E;
+}
 .btn:hover{
     background-color: #447992;
 }
@@ -72,7 +74,7 @@ h1 {
   }
 
   .textofooter{
-    color: white;
+    color:#070B0E;
     font-weight: bold;
   }
 
@@ -120,7 +122,7 @@ h1 {
   
   /* label color */
   .input-field label {
-    color: #000;
+    color: white;
   }
   /* label focus color */
   .input-field input[type=text]:focus + label {
@@ -145,3 +147,18 @@ h1 {
   .input-field .prefix.active {
     color: #78CAEF;
   }
+
+  /*redes sociales*/
+
+  .sociales{
+    margin-top: 2em ;
+  }
+
+  .sociales ul li{
+   display: inline;
+   margin: 0 1em;
+  }
+
+body{
+  background-color: #16151A;
+}
