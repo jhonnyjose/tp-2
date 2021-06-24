@@ -22,7 +22,7 @@ $enviaPara = 'jhonny.diaz@davinci.edu.ar';
 $textoCorreo = '';
 $textoCorreo .= "<p>".$nombre."</p>";
 $textoCorreo .= "<p>Su correo es: ".$correo."</p>";
-$textoCorreo .= "<p>Su telefono es: ".$telefono."</p>";
+$textoCorreo .= "<p>Su telefono es: ".$tel"</p>";
 $textoCorreo .= "<p>dice: ".$mensaje ."</p>";
 $textoCorreo .= "<hr />";
 
