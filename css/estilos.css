@@ -125,7 +125,7 @@ h1 {
     color: white;
   }
 
-  input {
+  input, textarea {
     color: white;
   }
   /* label focus color */
