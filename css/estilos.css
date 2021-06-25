@@ -8,6 +8,7 @@ nav{
 
 .azul{
     background-color: #78CAEF;
+    color: black;
 }
 .blanco{
     color: white;
@@ -98,7 +99,7 @@ h1 {
   /*fondo artista encontrado*/
 
   .fondoEncontrado{
-      background-color: #16151A;
+      background-color: black;
 
       transition: all .5s ease;
   }
