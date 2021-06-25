@@ -1,7 +1,4 @@
 <?php
-
-
-
 $host  = $_SERVER['HTTP_HOST'];
 $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 $enviado = 'gracias.html';
@@ -33,5 +30,6 @@ $mail_headers .= "Content-type: text/html; charset=utf-8\r\n";
 $mail_headers .= 'From: ' . $correo . "\r\n";
 @mail($enviaPara, $subject, $textoCorreo, $mail_headers);
 
-header("Location: http://$host$uri/$enviado")
+header("Location: http://$host$uri/$enviado");
+exit;
 ?>
