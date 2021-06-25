@@ -89,7 +89,7 @@ h1 {
 
   .fondos #informaciongenerada p{
       font-size: 2em;
-      color: #16151A;
+      color: #C69A69;
       font-weight: bold;
       
   }
@@ -98,7 +98,8 @@ h1 {
   /*fondo artista encontrado*/
 
   .fondoEncontrado{
-      background-color: #FED05C;
+      background-color: #16151A;
+
       transition: all .5s ease;
   }
 
