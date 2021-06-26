@@ -10,6 +10,11 @@ const precache = [
   './css/materialize.min.css',
   './css/estilos.css',
   './img/icon-512x512.png',
+  './img/facebook.png',
+  './img/twitter.png',
+  './img/whatsapp.png',
+
+
 
   
 
